@@ -96,6 +96,16 @@ h2 { font: 800 1.6rem var(--display); letter-spacing: -.02em; margin: 0 0 22px }
 .card p { margin: 0 0 8px; color: var(--muted); font-size: .94rem }
 .card .meta { font: .8rem var(--mono); color: var(--warm) }
 
+.projects { display: grid; gap: 18px }
+.project { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; min-width: 0 }
+.project h3 { font: 600 1.15rem var(--display); margin: 2px 0 8px }
+.project > p { margin: 0 0 12px; max-width: 70ch }
+.project dl { display: grid; grid-template-columns: 120px 1fr; gap: 6px 18px; margin: 0; font-size: .93rem }
+.project dt { font: 500 .8rem/1.9 var(--mono); color: var(--muted) }
+.project dd { margin: 0; min-width: 0 }
+.project .meta { font: .8rem var(--mono); color: var(--warm) }
+.note { color: var(--muted); font-size: .92rem; margin: 4px 0 0; max-width: 70ch }
+@media (max-width: 760px) { .project dl { grid-template-columns: 1fr; gap: 0 } .project dd { margin-bottom: 8px } }
 footer { border-top: 1px solid var(--line); padding-block: 28px 40px; color: var(--muted); font-size: .9rem;
   display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap }
 
@@ -117,6 +127,7 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; color: var
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -227,6 +238,36 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; color: var
         </div>
       </li>
     </ol>
+  </section>
+
+  <section id="projects">
+    <h2>Personal projects</h2>
+    <div class="projects">
+      <article class="project">
+        <div class="meta">Java 21 · Spring Boot · .NET 10 · Kubernetes</div>
+        <h3>Banking Modernisation Lab</h3>
+        <p>A learning lab that shows how a legacy banking monolith can be modernised step by step into a secure, event-driven, cloud-native architecture, using a fictional loan application process. Family Finance plays the legacy system. It runs on a local workstation and is a lab, not production software.</p>
+        <dl>
+          <dt>Architecture</dt><dd>Strangler Fig with an API gateway (.NET 10 + YARP), anti-corruption layer, transactional outbox and inbox, idempotent consumers and dead-letter queues over RabbitMQ, DDD with architecture tests, 17 ADRs and arc42 documentation</dd>
+          <dt>Security</dt><dd>Keycloak (OAuth2/OIDC), JWT validation, RBAC, four-eyes principle; Trivy, gitleaks and Checkov gates</dd>
+          <dt>Platform</dt><dd>Hardened Docker Compose, Kubernetes with Helm (k3d), Pod Security "restricted", NetworkPolicies, OpenTofu with drift detection, Azure target architecture in Bicep (validated, not deployed)</dd>
+          <dt>Operations</dt><dd>Prometheus, Alertmanager, Grafana, OpenTelemetry and Jaeger: one trace across HTTP, outbox and RabbitMQ</dd>
+          <dt>Delivery</dt><dd>GitLab CI/CD on a self-hosted runner: test, build, scan, plan, manual approval, deploy, verify</dd>
+        </dl>
+      </article>
+      <article class="project">
+        <div class="meta">Java 21 · Spring Boot 3 · React · PostgreSQL</div>
+        <h3>Family Finance</h3>
+        <p>A self-hosted finance platform for a family: separate logins plus a shared family view, one central ledger, budgets, CSV and Excel import, rental properties and loans, investments with FIFO cost basis, and net-worth history. It started on .NET 8 and was migrated to Java.</p>
+        <dl>
+          <dt>Backend</dt><dd>Spring Data JPA, Spring Security with JWT session cookie and account lockout, Flyway migrations, OpenAPI</dd>
+          <dt>Quality</dt><dd>JUnit 5 with embedded PostgreSQL, JaCoCo gate (at least 90 % lines and 75 % branches), Vitest in the frontend</dd>
+          <dt>Delivery</dt><dd>GitLab CI: tests, image build with Kaniko, Trivy, SAST, secret detection, CycloneDX SBOM; images tagged by commit SHA</dd>
+          <dt>Operations</dt><dd>Actuator health probes, Prometheus metrics and alert rules tested with promtool, JSON logs with request IDs, nightly backups with a safe restore script</dd>
+        </dl>
+      </article>
+    </div>
+    <p class="note">I make the architecture and technology decisions in both projects; most of the code is written with Claude Code. Both repositories are private, and I am happy to walk through them in a call.</p>
   </section>
 
   <section id="skills">
