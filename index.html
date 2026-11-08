@@ -1,303 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Tom Thomas's Homepage</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/ProfilePic.ico" />
-    <!-- Font Awesome icons (free version)-->
-    <script
-      src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
-      crossorigin="anonymous"></script>
-    <!-- Google fonts-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700"
-      rel="stylesheet"
-      type="text/css"/>
-    <link
-      href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i"
-      rel="stylesheet"
-      type="text/css"/>
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/mystyles.css" rel="stylesheet" />
-  </head>
-  <body id="page-top">
-    <!-- Navigation-->
-    <nav
-      class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"
-      id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Tom Thomas</span>
-        <span class="d-none d-lg-block"><img
-            class="img-fluid img-profile rounded-circle mx-auto mb-2"
-            src="assets/img/ProfilePic.ico"
-            alt=""/></span>
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#cv">CV</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#research">Research</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#PersonalInterests">Activities</a>
-          </li>
-        </ul>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tom Thomas · Software Engineer</title>
+<meta name="description" content="Tom Thomas, Senior Software Engineer and Engineering Lead in Frankfurt Rhein-Main. Financial software with .NET, Angular and Kubernetes.">
+<meta name="author" content="Tom Thomas">
+<meta property="og:title" content="Tom Thomas · Software Engineer">
+<meta property="og:description" content="Senior Software Engineer and Engineering Lead. Financial software with .NET, Angular and Kubernetes.">
+<meta property="og:image" content="https://tomkrony.github.io/assets/img/tom.jpg">
+<link rel="icon" href="assets/img/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one narrow reading column; a CI/CD pipeline strip is the signature element; experience as a dated ledger. */
+:root {
+  --bg: #f5f7f8; --surface: #ffffff; --ink: #14232a; --muted: #56676e; --line: #d6dfe2;
+  --accent: #0b5a86; --accent-ink: #ffffff; --warm: #c9771f; --ok: #2f7d4f;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg: #0e171b; --surface: #15232a; --ink: #e1eaed; --muted: #95a8ae; --line: #26363d;
+  --accent: #5cb3e4; --accent-ink: #0e171b; --warm: #e8a35a; --ok: #6fc48f; color-scheme: dark } }
+
+* { box-sizing: border-box }
+html { scroll-behavior: smooth }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } * { animation: none !important; transition: none !important } }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 var(--body);
+  padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)) }
+a { color: var(--accent); text-underline-offset: 3px }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px }
+.col { max-width: 880px; margin: 0 auto }
+
+nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 22px; flex-wrap: wrap }
+nav .mark { font: 800 1.05rem var(--display); color: var(--ink); text-decoration: none; letter-spacing: -.01em }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; flex-wrap: wrap; font-size: .92rem }
+nav ul a { color: var(--muted); text-decoration: none }
+nav ul a:hover { color: var(--ink) }
+
+header.hero { display: grid; grid-template-columns: 1fr 200px; gap: 40px; align-items: center; padding-block: 48px 36px }
+.eyebrow { font: 500 .78rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--warm); margin: 0 0 14px }
+h1 { font: 800 clamp(2.6rem, 7vw, 4.2rem)/1 var(--display); letter-spacing: -.03em; margin: 0 0 18px; text-wrap: balance }
+.lede { font-size: 1.18rem; color: var(--ink); margin: 0 0 22px; max-width: 34ch; text-wrap: pretty }
+.links { display: flex; flex-wrap: wrap; gap: 10px }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 6px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink); text-decoration: none; font-weight: 500; font-size: .92rem }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent) }
+.btn:hover { border-color: var(--accent) }
+.btn svg { width: 16px; height: 16px; fill: currentColor }
+.portrait { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: 50% 20%; border: 1px solid var(--line); max-width: 100% }
+.where { font: .85rem var(--mono); color: var(--muted); margin-top: 18px }
+
+/* pipeline strip */
+.pipeline { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; margin-block: 8px 56px }
+.pipeline p { margin: 0 0 14px; color: var(--muted); font-size: .92rem }
+.stages { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 0; font: .82rem var(--mono) }
+.stages li { display: flex; align-items: center }
+.stages li span { padding: 6px 10px; border-radius: 5px; border: 1px solid var(--line); background: var(--bg); white-space: nowrap }
+.stages li span::before { content: "\2713\00a0"; color: var(--ok) }
+.stages li.gate span { border-color: var(--warm) }
+.stages li.gate span::before { content: "\25CF\00a0"; color: var(--warm) }
+.stages li + li::before { content: ""; width: 18px; height: 1px; background: var(--muted); margin-inline: 4px }
+
+section { padding-block: 8px 48px }
+h2 { font: 800 1.6rem var(--display); letter-spacing: -.02em; margin: 0 0 22px }
+.prose { max-width: 65ch }
+.prose p { margin: 0 0 14px }
+
+.focus { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px }
+.focus h3 { font: 600 1.05rem var(--display); margin: 0 0 8px }
+.focus p { margin: 0; color: var(--muted); font-size: .95rem }
+.focus > div { border-top: 2px solid var(--accent); padding-top: 14px; min-width: 0 }
+
+.ledger { list-style: none; margin: 0; padding: 0 }
+.ledger li { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding-block: 18px; border-top: 1px solid var(--line) }
+.ledger li:last-child { border-bottom: 1px solid var(--line) }
+.ledger time { font: .84rem/1.9 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums }
+.ledger h3 { font: 600 1.08rem var(--body); margin: 0 }
+.ledger .org { color: var(--muted); font-size: .94rem }
+.ledger ul { margin: 8px 0 0; padding-left: 18px; font-size: .95rem }
+.ledger ul li { display: list-item; padding: 0; border: 0; margin-bottom: 4px }
+.ledger > li > div { min-width: 0 }
+
+.skills { display: grid; grid-template-columns: 170px 1fr; gap: 10px 24px; margin: 0 }
+.skills dt { font: 500 .84rem/1.9 var(--mono); color: var(--muted) }
+.skills dd { margin: 0 }
+
+.cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; min-width: 0 }
+.card h3 { font: 600 1rem var(--body); margin: 0 0 6px }
+.card p { margin: 0 0 8px; color: var(--muted); font-size: .94rem }
+.card .meta { font: .8rem var(--mono); color: var(--warm) }
+
+footer { border-top: 1px solid var(--line); padding-block: 28px 40px; color: var(--muted); font-size: .9rem;
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap }
+
+@media (max-width: 760px) {
+  header.hero { grid-template-columns: 1fr; gap: 24px; padding-top: 24px }
+  .portrait { width: 132px; height: 132px; order: -1 }
+  .focus, .cards { grid-template-columns: 1fr }
+  .ledger li { grid-template-columns: 1fr; gap: 4px }
+  .skills { grid-template-columns: 1fr; gap: 2px }
+  .skills dd { margin-bottom: 10px }
+  nav ul { gap: 14px }
+}
+</style>
+</head>
+<body>
+<div class="col">
+  <nav aria-label="Main">
+    <a class="mark" href="#top">Tom Thomas</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <div>
+      <p class="eyebrow">Senior Software Engineer · Engineering Lead</p>
+      <h1>Tom Thomas</h1>
+      <p class="lede">I build business-critical financial software with .NET and Angular, and the pipelines that ship it safely to Kubernetes.</p>
+      <div class="links">
+        <a class="btn primary" href="https://www.linkedin.com/in/aktomthomas/" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zM9.5 9.75h3.8v1.5h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.45h-4v-4.84c0-1.15-.02-2.64-1.6-2.64-1.62 0-1.86 1.26-1.86 2.56v4.92h-3.94z"/></svg>LinkedIn</a>
+        <a class="btn" href="https://www.xing.com/profile/Tom_Thomas47/cv" rel="me noopener" target="_blank">XING</a>
+        <a class="btn" href="https://github.com/tomkrony" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.7 5.38-5.27 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
       </div>
-    </nav>
-    <!-- Page Content-->
-    <div class="container-fluid p-0">
-      <!-- About-->
-      <section class="resume-section" id="about">
-        <div class="resume-section-content">
-          <h1 class="mb-0">
-            Tom
-            <span class="text-primary">Thomas</span>
-          </h1>
-          <div class="subheading mb-5">
-            Software Developer · CAD - Plan GmbH · (+49 ) 17686516255 ·
-            <a href="mailto:name@email.com">tomkrony@gmail.com</a>
-          </div>
-          <p class="lead mb-5" align="justify">
-            Einstein once said "Strive not to be a success, but rather to be of value".
-            I strongly believe that each day of your life should have a meaning and a worthy purpose.
-            I am one among the 1.3 billion minds from India. 
-            I was born in a remote village in Kerala, also known as "God's own country" in India.
-            My father always used to tell me that it's never too late to do anything you wanted to do 
-            and you never know what you can accomplish until you try. 
-            These lines have always motivated me in my professional and personal life. 
-            The eagerness in me helped me to learn new things. I am a curious person who enjoys in trying new things and learning from my mistakes.<br /><br />
+      <p class="where">Langen (Hessen) · Frankfurt Rhein-Main</p>
+    </div>
+    <img class="portrait" src="assets/img/tom.jpg" alt="Portrait of Tom Thomas" width="200" height="200">
+  </header>
 
+  <div class="pipeline" aria-label="How my team ships software">
+    <p>How code reaches production in the systems I am responsible for:</p>
+    <ol class="stages">
+      <li><span>feature branch</span></li>
+      <li><span>build</span></li>
+      <li><span>tests</span></li>
+      <li><span>integration tests</span></li>
+      <li><span>Trivy scan</span></li>
+      <li><span>TrustSource</span></li>
+      <li><span>Helm deploy</span></li>
+      <li class="gate"><span>manual approval</span></li>
+      <li><span>production</span></li>
+    </ol>
+  </div>
 
-            I am a post graduate in Advanced Computation Engineering. I did my Master degree from the 
-            <a href="https://tu-dresden.de/" target="_blank">Technische Universität, Dresden.</a> I earned a Bachelor of Technology degree in
-            Civil Engineering from the
-            <a href="https://sjcetpalai.ac.in/" target="_blank">SJCET, Palai</a>. 
-            I did my schooling from <a href="http://montfortanakkara.com/" target="_blank">Montfort School, Anakkara</a>. <br /><br />            
-          </p>
+  <section id="about">
+    <h2>About</h2>
+    <div class="prose">
+      <p>I have been building software professionally since 2019. Since 2023 I work at ECKD GmbH on business-critical software for financial services, and since July 2025 I lead the engineering team there. I take care of architecture and design decisions, code reviews and mentoring, and I own our CI/CD pipelines from build to production.</p>
+      <p>Before that I spent four years at CAD-PLAN in Frankfurt writing C#/.NET desktop applications and extensions for AutoCAD and Autodesk Inventor. My background is computational engineering: during my master's at TU Dresden I implemented finite element code in FORTRAN, C++ and Python, and I am a co-author of a journal paper from that research group.</p>
+      <p>I grew up in Kerala, India, and have lived in Germany since 2016. Outside work you will find me playing cricket or badminton.</p>
+    </div>
+  </section>
 
-          <div class="social-icons">
-            <a class="social-icon" href="https://www.linkedin.com/in/aktomthomas/"><i class="fab fa-linkedin-in"></i></a>
-            <a class="social-icon" href="https://github.com/tomkrony"><i class="fab fa-github"></i></a>
-            <a class="social-icon" href="https://twitter.com/thomasktom"><i class="fab fa-twitter"></i></a>           
-            <a class="social-icon" href="https://www.xing.com/profile/Tom_Thomas47/cv"><i class="fab fa-xing"></i></a>
-          </div>
-        </div>
-      </section>
-      <hr class="m-0" />
-      <!-- Experience-->
-      <section class="resume-section" id="experience">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Experience</h2>
-          <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-              <h3 class="mb-0">
-                <a href="https://cad-plan.com/" target="_blank">CAD - Plan GmbH</a>, Frankfurt, Germany
-              </h3>
-              <div class="subheading mb-3">Software Developer C# / .Net</div>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">January 2019 - present</span>
-            </div>
-          </div>
-          <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-              <h3 class="mb-0">
-                <a href="https://tu-dresden.de/" target="_blank">Technische Universität, Dresden (TUD)</a>, Germany
-              </h3>
-              <div class="subheading mb-3">Research Assistant (At Institute of Statics and Dynamics)</div>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">January 2018 - September 2018</span>
-            </div>
-          </div>
-          <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-              <h3 class="mb-0">
-                <a href="https://tu-dresden.de/" target="_blank">Technische Universität, Dresden (TUD)</a>, Germany
-              </h3>
-              <div class="subheading mb-3">Research Assistant (At Institute of Building Informatics)</div>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">March 2017 - December 2017</span>
-            </div>
-          </div>
-          <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-              <h3 class="mb-0">
-                <a href="https://www.greenwoods.in/" target="_blank" >Greenwoods India Pvt Ltd</a>, India
-              </h3>
-              <div class="subheading mb-3">Operations Executive</div>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">June 2016 - September 2016</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <hr class="m-0" />
-      <!-- Education-->
-      <section class="resume-section" id="education">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Education</h2>
-          <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-              <h3 class="mb-0">
-                <a href="https://tu-dresden.de/studium/vor-dem-studium/studienangebot/sins/sins_studiengang?autoid=27" target="_blank">Technische Universität, Dresden (TUD)</a>, Germany
-              </h3>
-              <div class="subheading mb-3">Master of Science (M Sc.)</div>
-              <div>Advanced Computation and Civil Engineering Structural Studies (ACCESS)</div>
-              <p>CGPA: 1,6 </p>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">October 2016 - February 2019</span>
-            </div>
-          </div>
-          <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-              <h3 class="mb-0">
-                <a href="https://sjcetpalai.ac.in/" target="_blank">St. Joseph College of Science and Technology (SJCET)</a>, Palai, India
-              </h3>
-              <div class="subheading mb-3">Bachelor of Technology (B.Tech)</div>
-              <div>Civil Engineering</div>
-              <p>CGPA: 8.2 / 10</p>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">June 2012 - June 2016</span>
-            </div>
-          </div>
-          <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-              <h3 class="mb-0">
-                <a href="http://montfortanakkara.com/" target="_blank">Montfort School (MSA)</a>, India
-              </h3>
-              <div class="subheading mb-3">Higher Secondary Education</div>
-              <div>Computer Science</div>
-              <p>CGPA: 8.0 / 10</p>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">June 2010 - April 2012</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <hr class="m-0" />
-      
-      <hr class="m-0" />
-      <!-- Awards-->
-      <section class="resume-section" id="awards">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Awards &amp; Certifications</h2>
-          <ul class="fa-ul mb-0">
-            <li>
-              <span class="fa-li" ><i class="fas fa-trophy text-warning"></i></span>
-              Third Position in the Digital marketing workshop conducted by 
-              <a href="https://www.iimcal.ac.in/" target="_blank">IIM Calcutta</a>.
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-              Participated in ISTE workshop on Green Building Awareness conducted by 
-              <a href="https://www.iitb.ac.in/" target="_blank" >IIT Bombay</a>.
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-              Captained the <a href="https://sjcetpalai.ac.in/" target="_blank" >St Josephs College</a> 
-              basketball team and participated in different zonal University Championships.
-            </li>
-            <li>
-              <span class="fa-li" ><i class="fas fa-trophy text-warning"></i></span>
-              Served as Chief Student Placement Coordinator of
-              <a href="https://sjcetpalai.ac.in/"
-                target="_blank">St Josephs College of Engineering and Technology</a>.
-            </li>
-            <li>
-              <span class="fa-li" ><i class="fas fa-trophy text-warning"></i ></span>
-                Second Prize for Web Page Designing Competition(HTML) in the sub
-                district talent quest.
-              </li>            
-            </ul>
-          </div>
-        </section>
-        <hr class="m-0" />
-      <!-- CV-->
-      <section class="resume-section" id="cv">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Curriculum vitae</h2>
-          <ul class="fa-ul mb-0" id="mylist-a">
-            <li>
-              <!-- <span class="fa-li"> -->
-                <!-- <iframe src="https://drive.google.com/file/d/16arRRk-lxrfZBP0cmbmLzh7uaaBOv3V9/preview" width="800" height="480" allow="autoplay"></iframe> -->
-                <i class="mytitle-a">Lebenslauf - [<a href="files/CV.pdf">Lebenslauf</a>]</i>
-              <!-- </span>   -->
-            </li>
-            <li>
-                <i class="mytitle-a">Resume - [<a href="files/Resume.pdf">CV</a>]</i>
-            </li>
+  <section aria-labelledby="focus-h">
+    <h2 id="focus-h">What I work on</h2>
+    <div class="focus">
+      <div>
+        <h3>Architecture</h3>
+        <p>Moving a modular monolith step by step towards microservices. Domain-Driven Design, clear module boundaries, event-driven communication with RabbitMQ.</p>
+      </div>
+      <div>
+        <h3>Delivery</h3>
+        <p>Azure DevOps pipelines, Helm deployments to Rancher-managed Kubernetes, container scanning with Trivy and open-source compliance with TrustSource.</p>
+      </div>
+      <div>
+        <h3>Full stack</h3>
+        <p>ASP.NET Core and Entity Framework Core on PostgreSQL, Angular and TypeScript in the frontend, Keycloak authentication and role-based authorization.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <ol class="ledger">
+      <li>
+        <time>07/2025 – today</time>
+        <div>
+          <h3>Engineering Lead</h3>
+          <div class="org">ECKD GmbH</div>
+          <ul>
+            <li>Architecture and design decisions for business-critical financial software, including the migration from a modular monolith to microservices.</li>
+            <li>Code reviews, mentoring, and refining requirements with product owners and domain experts.</li>
+            <li>Owner of the Azure DevOps pipelines; moved integration tests into their own pipeline to shorten test runs.</li>
           </ul>
         </div>
-      </section>
-      
-      <hr class="m-0" />
-      <!-- Research -->
-      <section class="resume-section" id="research">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Research &amp; Certifications </h2>
-          <ul class="fa-ul mb-0" id="mylist-a">
-            <li><i class="mytitle-a">International journal of Numerical methods - [<a href="files/Publikation.pdf">Publication</a>]</i></li>
-            <li><i class="mytitle-a">AWS Cloud practitioner - [<a href="files/AWS Course Completion Certificate.pdf">Certificate</a>]</i></li>
-            <li><i class="mytitle-a">Reference letter - [<a href="files/Referenceletter.pdf">Prof. Dr.Ing. Kaliske</a>]</i></li>
-          </ul><br/><br/>
-          <iframe src="https://drive.google.com/file/d/16RR5eH-hfxEZChrHAhEJyzL4J_2EpKwO/preview" width="900" height="1150" allow="autoplay"></iframe>
+      </li>
+      <li>
+        <time>03/2023 – 06/2025</time>
+        <div>
+          <h3>Senior Software Developer</h3>
+          <div class="org">ECKD GmbH</div>
+          <ul>
+            <li>Full-stack development with ASP.NET Core, Entity Framework Core, PostgreSQL and Angular.</li>
+            <li>Role-based authorization, Keycloak integration and messaging with RabbitMQ.</li>
+          </ul>
         </div>
-      </section>
-      
-      <section class="resume-section" id="PersonalInterests">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Personal Interests</h2>
-          <iframe src="https://drive.google.com/embeddedfolderview?id=1--GiBPTyoyhqqQV6eDebzEP7MloDEhD5#grid" style="width:100%; height:600px; border:0;"></iframe>
+      </li>
+      <li>
+        <time>01/2019 – 02/2023</time>
+        <div>
+          <h3>Software Developer C#/.NET</h3>
+          <div class="org">CAD-PLAN GmbH, Frankfurt am Main</div>
+          <ul>
+            <li>Windows applications and extensions for AutoCAD and Autodesk Inventor with WPF, XAML and MVVM; native C++ components via C++/CLI.</li>
+          </ul>
         </div>
-      </section>
-     
+      </li>
+      <li>
+        <time>06/2017 – 09/2018</time>
+        <div>
+          <h3>Research Assistant</h3>
+          <div class="org">Technische Universität Dresden</div>
+          <ul>
+            <li>Finite element implementation with FEAP, FORTRAN, C++ and Python; building energy simulation.</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Backend</dt><dd>C#, .NET, ASP.NET Core Web API, Entity Framework Core, REST</dd>
+      <dt>Frontend</dt><dd>Angular, TypeScript, JavaScript, HTML, CSS</dd>
+      <dt>Architecture</dt><dd>Modular monolith, microservices, Domain-Driven Design, Clean Architecture, RabbitMQ</dd>
+      <dt>Data</dt><dd>PostgreSQL, MS SQL Server, MariaDB/MySQL, SQLite</dd>
+      <dt>Platform</dt><dd>Docker, Kubernetes, Helm, Rancher, Azure DevOps, GitLab CI/CD, Serilog, Elasticsearch</dd>
+      <dt>Security</dt><dd>Keycloak, JWT, RBAC, Trivy, TrustSource</dd>
+      <dt>Ways of working</dt><dd>Scrum, Jira, code reviews, mentoring, agentic coding with Claude Code and OpenAI Codex</dd>
+      <dt>Languages</dt><dd>English (fluent), German (C1), Malayalam (native), Hindi, Tamil</dd>
+    </dl>
+  </section>
+
+  <section id="research">
+    <h2>Education &amp; research</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="meta">2016 – 2019</div>
+        <h3>M.Sc. Advanced Computation and Civil Engineering Structural Studies</h3>
+        <p>Technische Universität Dresden. Grade 1.6, master's thesis 1.0.</p>
+        <p><a href="files/Poster_Masterarbeit.pdf">Thesis poster (PDF)</a></p>
+      </div>
+      <div class="card">
+        <div class="meta">2019 · International Journal for Numerical Methods in Engineering</div>
+        <h3>Finite thermo-elastic decoupled two-scale analysis</h3>
+        <p>Fleischhauer, Thomas, Kato, Terada, Kaliske.</p>
+        <p><a href="https://doi.org/10.1002/nme.6212" target="_blank" rel="noopener">doi:10.1002/nme.6212</a></p>
+      </div>
+      <div class="card">
+        <div class="meta">2012 – 2016</div>
+        <h3>B.Tech. Civil Engineering</h3>
+        <p>St. Joseph's College of Engineering and Technology, Palai (Mahatma Gandhi University). First Class with Distinction.</p>
+      </div>
+      <div class="card">
+        <div class="meta">Courses</div>
+        <h3>Continuing education</h3>
+        <p>AWS Cloud Practitioner Essentials (AWS Skill Builder, 2022). Machine Learning (Stanford University on Coursera).</p>
+      </div>
     </div>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Third party plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-  </body>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="prose">
+      <p>The quickest way to reach me is a message on <a href="https://www.linkedin.com/in/aktomthomas/" target="_blank" rel="noopener">LinkedIn</a> or an email to <a href="mailto:aktomthomas@gmail.com">aktomthomas@gmail.com</a>.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Tom Thomas</span>
+    <span>Langen (Hessen), Germany</span>
+  </footer>
+</div>
+</body>
 </html>
