@@ -1,208 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Tom Thomas · Software Engineer</title>
-<meta name="description" content="Tom Thomas, Senior Software Engineer and Engineering Lead in Frankfurt Rhein-Main. Financial software with .NET, Angular and Kubernetes.">
+<title>Tom Thomas · Softwareentwickler</title>
+<meta name="description" content="Tom Thomas, Senior Software Engineer und Engineering Lead im Rhein-Main-Gebiet. Finanzsoftware mit .NET, Angular und Kubernetes.">
 <meta name="author" content="Tom Thomas">
-<meta property="og:title" content="Tom Thomas · Software Engineer">
-<meta property="og:description" content="Senior Software Engineer and Engineering Lead. Financial software with .NET, Angular and Kubernetes.">
+<meta property="og:title" content="Tom Thomas · Softwareentwickler">
+<meta property="og:description" content="Senior Software Engineer und Engineering Lead. Finanzsoftware mit .NET, Angular und Kubernetes.">
 <meta property="og:image" content="https://tomkrony.github.io/assets/img/tom.jpg">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_GB">
 <link rel="icon" href="assets/img/favicon.ico">
+<link rel="alternate" hreflang="de" href="https://tomkrony.github.io/">
+<link rel="alternate" hreflang="en" href="https://tomkrony.github.io/en.html">
+<link rel="alternate" hreflang="x-default" href="https://tomkrony.github.io/">
+<link rel="canonical" href="https://tomkrony.github.io/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<style>
-/* Layout: one narrow reading column; a CI/CD pipeline strip is the signature element; experience as a dated ledger. */
-:root {
-  --bg: #f5f7f8; --surface: #ffffff; --ink: #14232a; --muted: #56676e; --line: #d6dfe2;
-  --accent: #0b5a86; --accent-ink: #ffffff; --warm: #c9771f; --ok: #2f7d4f;
-  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
-  color-scheme: light;
-}
-@media (prefers-color-scheme: dark) { :root {
-  --bg: #0e171b; --surface: #15232a; --ink: #e1eaed; --muted: #95a8ae; --line: #26363d;
-  --accent: #5cb3e4; --accent-ink: #0e171b; --warm: #e8a35a; --ok: #6fc48f; color-scheme: dark } }
-
-* { box-sizing: border-box }
-html { scroll-behavior: smooth }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } * { animation: none !important; transition: none !important } }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 var(--body);
-  padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)) }
-a { color: var(--accent); text-underline-offset: 3px }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px }
-.col { max-width: 880px; margin: 0 auto }
-
-nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 22px; flex-wrap: wrap }
-nav .mark { font: 800 1.05rem var(--display); color: var(--ink); text-decoration: none; letter-spacing: -.01em }
-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; flex-wrap: wrap; font-size: .92rem }
-nav ul a { color: var(--muted); text-decoration: none }
-nav ul a:hover { color: var(--ink) }
-
-header.hero { display: grid; grid-template-columns: 1fr 200px; gap: 40px; align-items: center; padding-block: 48px 36px }
-.eyebrow { font: 500 .78rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--warm); margin: 0 0 14px }
-h1 { font: 800 clamp(2.6rem, 7vw, 4.2rem)/1 var(--display); letter-spacing: -.03em; margin: 0 0 18px; text-wrap: balance }
-.lede { font-size: 1.18rem; color: var(--ink); margin: 0 0 22px; max-width: 34ch; text-wrap: pretty }
-.links { display: flex; flex-wrap: wrap; gap: 10px }
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 6px; border: 1px solid var(--line);
-  background: var(--surface); color: var(--ink); text-decoration: none; font-weight: 500; font-size: .92rem }
-.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent) }
-.btn:hover { border-color: var(--accent) }
-.btn svg { width: 16px; height: 16px; fill: currentColor }
-.portrait { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: 50% 20%; border: 1px solid var(--line); max-width: 100% }
-.where { font: .85rem var(--mono); color: var(--muted); margin-top: 18px }
-
-/* pipeline strip */
-.pipeline { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; margin-block: 8px 56px }
-.pipeline p { margin: 0 0 14px; color: var(--muted); font-size: .92rem }
-.stages { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 0; font: .82rem var(--mono) }
-.stages li { display: flex; align-items: center }
-.stages li span { padding: 6px 10px; border-radius: 5px; border: 1px solid var(--line); background: var(--bg); white-space: nowrap }
-.stages li span::before { content: "\2713\00a0"; color: var(--ok) }
-.stages li.gate span { border-color: var(--warm) }
-.stages li.gate span::before { content: "\25CF\00a0"; color: var(--warm) }
-.stages li + li::before { content: ""; width: 18px; height: 1px; background: var(--muted); margin-inline: 4px }
-
-section { padding-block: 8px 48px }
-h2 { font: 800 1.6rem var(--display); letter-spacing: -.02em; margin: 0 0 22px }
-.prose { max-width: 65ch }
-.prose p { margin: 0 0 14px }
-
-.focus { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px }
-.focus h3 { font: 600 1.05rem var(--display); margin: 0 0 8px }
-.focus p { margin: 0; color: var(--muted); font-size: .95rem }
-.focus > div { border-top: 2px solid var(--accent); padding-top: 14px; min-width: 0 }
-
-.ledger { list-style: none; margin: 0; padding: 0 }
-.ledger li { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding-block: 18px; border-top: 1px solid var(--line) }
-.ledger li:last-child { border-bottom: 1px solid var(--line) }
-.ledger time { font: .84rem/1.9 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums }
-.ledger h3 { font: 600 1.08rem var(--body); margin: 0 }
-.ledger .org { color: var(--muted); font-size: .94rem }
-.ledger ul { margin: 8px 0 0; padding-left: 18px; font-size: .95rem }
-.ledger ul li { display: list-item; padding: 0; border: 0; margin-bottom: 4px }
-.ledger > li > div { min-width: 0 }
-
-.skills { display: grid; grid-template-columns: 170px 1fr; gap: 10px 24px; margin: 0 }
-.skills dt { font: 500 .84rem/1.9 var(--mono); color: var(--muted) }
-.skills dd { margin: 0 }
-
-.cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px }
-.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; min-width: 0 }
-.card h3 { font: 600 1rem var(--body); margin: 0 0 6px }
-.card p { margin: 0 0 8px; color: var(--muted); font-size: .94rem }
-.card .meta { font: .8rem var(--mono); color: var(--warm) }
-
-.projects { display: grid; gap: 18px }
-.project { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; min-width: 0 }
-.project h3 { font: 600 1.15rem var(--display); margin: 2px 0 8px }
-.project > p { margin: 0 0 12px; max-width: 70ch }
-.project dl { display: grid; grid-template-columns: 120px 1fr; gap: 6px 18px; margin: 0; font-size: .93rem }
-.project dt { font: 500 .8rem/1.9 var(--mono); color: var(--muted) }
-.project dd { margin: 0; min-width: 0 }
-.project .meta { font: .8rem var(--mono); color: var(--warm) }
-.note { color: var(--muted); font-size: .92rem; margin: 4px 0 0; max-width: 70ch }
-@media (max-width: 760px) { .project dl { grid-template-columns: 1fr; gap: 0 } .project dd { margin-bottom: 8px } }
-footer { border-top: 1px solid var(--line); padding-block: 28px 40px; color: var(--muted); font-size: .9rem;
-  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap }
-
-@media (max-width: 760px) {
-  header.hero { grid-template-columns: 1fr; gap: 24px; padding-top: 24px }
-  .portrait { width: 132px; height: 132px; order: -1 }
-  .focus, .cards { grid-template-columns: 1fr }
-  .ledger li { grid-template-columns: 1fr; gap: 4px }
-  .skills { grid-template-columns: 1fr; gap: 2px }
-  .skills dd { margin-bottom: 10px }
-  nav ul { gap: 14px }
-}
-</style>
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
 <div class="col">
-  <nav aria-label="Main">
+  <nav aria-label="Hauptnavigation">
     <a class="mark" href="#top">Tom Thomas</a>
+    <div class="right">
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">Über mich</a></li>
+      <li><a href="#experience">Erfahrung</a></li>
+      <li><a href="#projects">Projekte</a></li>
+      <li><a href="#skills">Kenntnisse</a></li>
+      <li><a href="#research">Forschung</a></li>
+      <li><a href="#contact">Kontakt</a></li>
     </ul>
+    <a class="lang" href="en.html" hreflang="en" lang="en" title="English version">EN</a>
+    </div>
   </nav>
 
   <header class="hero" id="top">
     <div>
       <p class="eyebrow">Senior Software Engineer · Engineering Lead</p>
       <h1>Tom Thomas</h1>
-      <p class="lede">I build business-critical financial software with .NET and Angular, and the pipelines that ship it safely to Kubernetes.</p>
+      <p class="lede">Ich entwickle geschäftskritische Finanzsoftware mit .NET und Angular und die Pipelines, die sie sicher nach Kubernetes bringen.</p>
       <div class="links">
         <a class="btn primary" href="https://www.linkedin.com/in/aktomthomas/" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zM9.5 9.75h3.8v1.5h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.45h-4v-4.84c0-1.15-.02-2.64-1.6-2.64-1.62 0-1.86 1.26-1.86 2.56v4.92h-3.94z"/></svg>LinkedIn</a>
         <a class="btn" href="https://www.xing.com/profile/Tom_Thomas47/cv" rel="me noopener" target="_blank">XING</a>
-        <a class="btn" href="https://github.com/tomkrony" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.7 5.38-5.27 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
+        <a class="btn" href="https://github.com/tomkrony" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.690-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.7 5.38-5.27 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
       </div>
-      <p class="where">Langen (Hessen) · Frankfurt Rhein-Main</p>
+      <p class="where">Langen (Hessen) · Rhein-Main</p>
     </div>
-    <img class="portrait" src="assets/img/tom.jpg" alt="Portrait of Tom Thomas" width="200" height="200">
+    <img class="portrait" src="assets/img/tom.jpg" alt="Porträt von Tom Thomas" width="200" height="200">
   </header>
 
-  <div class="pipeline" aria-label="How my team ships software">
-    <p>How code reaches production in the systems I am responsible for:</p>
+  <div class="pipeline" aria-label="So liefert mein Team Software aus">
+    <p>So kommt Code in den Systemen, die ich verantworte, in die Produktion:</p>
     <ol class="stages">
-      <li><span>feature branch</span></li>
-      <li><span>build</span></li>
-      <li><span>tests</span></li>
-      <li><span>integration tests</span></li>
-      <li><span>Trivy scan</span></li>
+      <li><span>Feature-Branch</span></li>
+      <li><span>Build</span></li>
+      <li><span>Tests</span></li>
+      <li><span>Integrationstests</span></li>
+      <li><span>Trivy-Scan</span></li>
       <li><span>TrustSource</span></li>
-      <li><span>Helm deploy</span></li>
-      <li class="gate"><span>manual approval</span></li>
-      <li><span>production</span></li>
+      <li><span>Helm-Deployment</span></li>
+      <li class="gate"><span>manuelle Freigabe</span></li>
+      <li><span>Produktion</span></li>
     </ol>
   </div>
 
   <section id="about">
-    <h2>About</h2>
+    <h2>Über mich</h2>
     <div class="prose">
-      <p>I have been building software professionally since 2019. Since 2023 I work at ECKD GmbH on business-critical software for financial services, and since July 2025 I lead the engineering team there. I take care of architecture and design decisions, code reviews and mentoring, and I own our CI/CD pipelines from build to production.</p>
-      <p>Before that I spent four years at CAD-PLAN in Frankfurt writing C#/.NET desktop applications and extensions for AutoCAD and Autodesk Inventor. My background is computational engineering: during my master's at TU Dresden I implemented finite element code in FORTRAN, C++ and Python, and I am a co-author of a journal paper from that research group.</p>
-      <p>I grew up in Kerala, India, and have lived in Germany since 2016. Outside work you will find me playing cricket or badminton.</p>
+      <p>Ich entwickle seit 2019 beruflich Software. Seit 2023 arbeite ich bei der ECKD GmbH an geschäftskritischer Software für Finanzdienstleister, seit Juli 2025 leite ich dort das Entwicklungsteam. Ich verantworte Architektur- und Designentscheidungen, Code-Reviews und Mentoring sowie unsere CI/CD-Pipelines vom Build bis in die Produktion.</p>
+      <p>Davor habe ich vier Jahre bei der CAD-PLAN GmbH in Frankfurt Desktop-Anwendungen und Erweiterungen für AutoCAD und Autodesk Inventor mit C#/.NET entwickelt. Mein Hintergrund ist das Computational Engineering: Im Master an der TU Dresden habe ich Finite-Elemente-Code in FORTRAN, C++ und Python implementiert, und ich bin Mitautor eines Fachartikels aus dieser Forschungsgruppe.</p>
+      <p>Aufgewachsen bin ich in Kerala, Indien, und ich lebe seit 2016 in Deutschland. In meiner Freizeit spiele ich Cricket und Badminton.</p>
     </div>
   </section>
 
   <section aria-labelledby="focus-h">
-    <h2 id="focus-h">What I work on</h2>
+    <h2 id="focus-h">Woran ich arbeite</h2>
     <div class="focus">
       <div>
-        <h3>Architecture</h3>
-        <p>Moving a modular monolith step by step towards microservices. Domain-Driven Design, clear module boundaries, event-driven communication with RabbitMQ.</p>
+        <h3>Architektur</h3>
+        <p>Schrittweise Migration eines modularen Monolithen zu Microservices. Domain-Driven Design, klare Modulgrenzen, ereignisgetriebene Kommunikation mit RabbitMQ.</p>
       </div>
       <div>
-        <h3>Delivery</h3>
-        <p>Azure DevOps pipelines, Helm deployments to Rancher-managed Kubernetes, container scanning with Trivy and open-source compliance with TrustSource.</p>
+        <h3>Auslieferung</h3>
+        <p>Pipelines in Azure DevOps, Helm-Deployments auf Rancher-verwaltete Kubernetes-Cluster, Container-Scanning mit Trivy und Open-Source-Compliance mit TrustSource.</p>
       </div>
       <div>
-        <h3>Full stack</h3>
-        <p>ASP.NET Core and Entity Framework Core on PostgreSQL, Angular and TypeScript in the frontend, Keycloak authentication and role-based authorization.</p>
+        <h3>Fullstack</h3>
+        <p>ASP.NET Core und Entity Framework Core auf PostgreSQL, Angular und TypeScript im Frontend, Authentifizierung mit Keycloak und rollenbasierte Autorisierung.</p>
       </div>
     </div>
   </section>
 
   <section id="experience">
-    <h2>Experience</h2>
+    <h2>Berufserfahrung</h2>
     <ol class="ledger">
       <li>
-        <time>07/2025 – today</time>
+        <time>07/2025 – heute</time>
         <div>
           <h3>Engineering Lead</h3>
           <div class="org">ECKD GmbH</div>
           <ul>
-            <li>Architecture and design decisions for business-critical financial software, including the migration from a modular monolith to microservices.</li>
-            <li>Code reviews, mentoring, and refining requirements with product owners and domain experts.</li>
-            <li>Owner of the Azure DevOps pipelines; moved integration tests into their own pipeline to shorten test runs.</li>
+            <li>Architektur- und Designentscheidungen für geschäftskritische Finanzsoftware, darunter die Migration vom modularen Monolithen zu Microservices.</li>
+            <li>Code-Reviews, Mentoring und Abstimmung der Anforderungen mit Product Ownern und Fachbereich.</li>
+            <li>Verantwortung für die Pipelines in Azure DevOps; Integrationstests in eine eigene Pipeline ausgelagert, um die Testlaufzeiten zu verkürzen.</li>
           </ul>
         </div>
       </li>
@@ -212,8 +116,8 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; color: var
           <h3>Senior Software Developer</h3>
           <div class="org">ECKD GmbH</div>
           <ul>
-            <li>Full-stack development with ASP.NET Core, Entity Framework Core, PostgreSQL and Angular.</li>
-            <li>Role-based authorization, Keycloak integration and messaging with RabbitMQ.</li>
+            <li>Fullstack-Entwicklung mit ASP.NET Core, Entity Framework Core, PostgreSQL und Angular.</li>
+            <li>Rollenbasierte Autorisierung, Anbindung an Keycloak und Messaging mit RabbitMQ.</li>
           </ul>
         </div>
       </li>
@@ -223,17 +127,17 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; color: var
           <h3>Software Developer C#/.NET</h3>
           <div class="org">CAD-PLAN GmbH, Frankfurt am Main</div>
           <ul>
-            <li>Windows applications and extensions for AutoCAD and Autodesk Inventor with WPF, XAML and MVVM; native C++ components via C++/CLI.</li>
+            <li>Windows-Anwendungen und Erweiterungen für AutoCAD und Autodesk Inventor mit WPF, XAML und MVVM; Anbindung nativer C++-Komponenten über C++/CLI.</li>
           </ul>
         </div>
       </li>
       <li>
         <time>06/2017 – 09/2018</time>
         <div>
-          <h3>Research Assistant</h3>
+          <h3>Wissenschaftliche Hilfskraft</h3>
           <div class="org">Technische Universität Dresden</div>
           <ul>
-            <li>Finite element implementation with FEAP, FORTRAN, C++ and Python; building energy simulation.</li>
+            <li>Finite-Elemente-Implementierung mit FEAP, FORTRAN, C++ und Python; Gebäudeenergiesimulation.</li>
           </ul>
         </div>
       </li>
@@ -241,56 +145,56 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; color: var
   </section>
 
   <section id="projects">
-    <h2>Personal projects</h2>
+    <h2>Private Projekte</h2>
     <div class="projects">
       <article class="project">
         <div class="meta">Java 21 · Spring Boot · .NET 10 · Kubernetes</div>
         <h3>Banking Modernisation Lab</h3>
-        <p>A learning lab that shows how a legacy banking monolith can be modernised step by step into a secure, event-driven, cloud-native architecture, using a fictional loan application process. Family Finance plays the legacy system. It runs on a local workstation and is a lab, not production software.</p>
+        <p>Ein Lernlabor, das zeigt, wie sich ein gewachsener Banken-Monolith Schritt für Schritt in eine sichere, ereignisgetriebene, Cloud-native Architektur überführen lässt, am Beispiel eines fiktiven Kreditantragsprozesses. Family Finance übernimmt dabei die Rolle des Altsystems. Das Labor läuft auf einem lokalen Rechner und ist keine Produktivsoftware.</p>
         <dl>
-          <dt>Architecture</dt><dd>Strangler Fig with an API gateway (.NET 10 + YARP), anti-corruption layer, transactional outbox and inbox, idempotent consumers and dead-letter queues over RabbitMQ, DDD with architecture tests, 17 ADRs and arc42 documentation</dd>
-          <dt>Security</dt><dd>Keycloak (OAuth2/OIDC), JWT validation, RBAC, four-eyes principle; Trivy, gitleaks and Checkov gates</dd>
-          <dt>Platform</dt><dd>Hardened Docker Compose, Kubernetes with Helm (k3d), Pod Security "restricted", NetworkPolicies, OpenTofu with drift detection, Azure target architecture in Bicep (validated, not deployed)</dd>
-          <dt>Operations</dt><dd>Prometheus, Alertmanager, Grafana, OpenTelemetry and Jaeger: one trace across HTTP, outbox and RabbitMQ</dd>
-          <dt>Delivery</dt><dd>GitLab CI/CD on a self-hosted runner: test, build, scan, plan, manual approval, deploy, verify</dd>
+          <dt>Architektur</dt><dd>Strangler Fig mit API-Gateway (.NET 10 + YARP), Anti-Corruption-Layer, Transactional Outbox und Inbox, idempotente Consumer und Dead-Letter-Queues über RabbitMQ, DDD mit Architekturtests, 17 ADRs und arc42-Dokumentation</dd>
+          <dt>Sicherheit</dt><dd>Keycloak (OAuth2/OIDC), JWT-Validierung, RBAC, Vier-Augen-Prinzip; Prüfungen mit Trivy, gitleaks und Checkov</dd>
+          <dt>Plattform</dt><dd>Gehärtetes Docker Compose, Kubernetes mit Helm (k3d), Pod Security „restricted“, NetworkPolicies, OpenTofu mit Drift-Erkennung, Azure-Zielarchitektur in Bicep (validiert, nicht ausgerollt)</dd>
+          <dt>Betrieb</dt><dd>Prometheus, Alertmanager, Grafana, OpenTelemetry und Jaeger: ein durchgehender Trace über HTTP, Outbox und RabbitMQ</dd>
+          <dt>Auslieferung</dt><dd>GitLab CI/CD auf einem eigenen Runner: Test, Build, Scan, Plan, manuelle Freigabe, Deployment, Verifikation</dd>
         </dl>
       </article>
       <article class="project">
         <div class="meta">Java 21 · Spring Boot 3 · React · PostgreSQL</div>
         <h3>Family Finance</h3>
-        <p>A self-hosted finance platform for a family: separate logins plus a shared family view, one central ledger, budgets, CSV and Excel import, rental properties and loans, investments with FIFO cost basis, and net-worth history. It started on .NET 8 and was migrated to Java.</p>
+        <p>Eine selbst gehostete Finanzplattform für eine Familie: eigene Logins und eine gemeinsame Familienansicht, ein zentrales Hauptbuch, Budgets, CSV- und Excel-Import, Mietimmobilien und Kredite, Wertpapiere mit FIFO-Einstandswerten und die Entwicklung des Nettovermögens. Begonnen mit .NET 8, später nach Java migriert.</p>
         <dl>
-          <dt>Backend</dt><dd>Spring Data JPA, Spring Security with JWT session cookie and account lockout, Flyway migrations, OpenAPI</dd>
-          <dt>Quality</dt><dd>JUnit 5 with embedded PostgreSQL, JaCoCo gate (at least 90 % lines and 75 % branches), Vitest in the frontend</dd>
-          <dt>Delivery</dt><dd>GitLab CI: tests, image build with Kaniko, Trivy, SAST, secret detection, CycloneDX SBOM; images tagged by commit SHA</dd>
-          <dt>Operations</dt><dd>Actuator health probes, Prometheus metrics and alert rules tested with promtool, JSON logs with request IDs, nightly backups with a safe restore script</dd>
+          <dt>Backend</dt><dd>Spring Data JPA, Spring Security mit JWT-Session-Cookie und Account-Sperre, Flyway-Migrationen, OpenAPI</dd>
+          <dt>Qualität</dt><dd>JUnit 5 mit eingebettetem PostgreSQL, JaCoCo-Gate (mindestens 90 % Zeilen und 75 % Branches), Vitest im Frontend</dd>
+          <dt>Auslieferung</dt><dd>GitLab CI: Tests, Image-Build mit Kaniko, Trivy, SAST, Secret Detection, CycloneDX-SBOM; Images mit Commit-SHA getaggt</dd>
+          <dt>Betrieb</dt><dd>Health-Checks über Actuator, Prometheus-Metriken und mit promtool getestete Alert-Regeln, JSON-Logs mit Request-IDs, nächtliche Backups mit sicherem Restore-Skript</dd>
         </dl>
       </article>
     </div>
-    <p class="note">I make the architecture and technology decisions in both projects; most of the code is written with Claude Code. Both repositories are private, and I am happy to walk through them in a call.</p>
+    <p class="note">In beiden Projekten treffe ich die Architektur- und Technologieentscheidungen; den Code schreibe ich überwiegend mit Claude Code. Beide Repositories sind privat. Gern stelle ich sie in einem Gespräch vor.</p>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
+    <h2>Kenntnisse</h2>
     <dl class="skills">
       <dt>Backend</dt><dd>C#, .NET, ASP.NET Core Web API, Entity Framework Core, REST</dd>
       <dt>Frontend</dt><dd>Angular, TypeScript, JavaScript, HTML, CSS</dd>
-      <dt>Architecture</dt><dd>Modular monolith, microservices, Domain-Driven Design, Clean Architecture, RabbitMQ</dd>
-      <dt>Data</dt><dd>PostgreSQL, MS SQL Server, MariaDB/MySQL, SQLite</dd>
-      <dt>Platform</dt><dd>Docker, Kubernetes, Helm, Rancher, Azure DevOps, GitLab CI/CD, Serilog, Elasticsearch</dd>
-      <dt>Security</dt><dd>Keycloak, JWT, RBAC, Trivy, TrustSource</dd>
-      <dt>Ways of working</dt><dd>Scrum, Jira, code reviews, mentoring, agentic coding with Claude Code and OpenAI Codex</dd>
-      <dt>Languages</dt><dd>English (fluent), German (C1), Malayalam (native), Hindi, Tamil</dd>
+      <dt>Architektur</dt><dd>Modularer Monolith, Microservices, Domain-Driven Design, Clean Architecture, RabbitMQ</dd>
+      <dt>Datenbanken</dt><dd>PostgreSQL, MS SQL Server, MariaDB/MySQL, SQLite</dd>
+      <dt>Plattform</dt><dd>Docker, Kubernetes, Helm, Rancher, Azure DevOps, GitLab CI/CD, Serilog, Elasticsearch</dd>
+      <dt>Sicherheit</dt><dd>Keycloak, JWT, RBAC, Trivy, TrustSource</dd>
+      <dt>Arbeitsweise</dt><dd>Scrum, Jira, Code-Reviews, Mentoring, Agentic Coding mit Claude Code und OpenAI Codex</dd>
+      <dt>Sprachen</dt><dd>Deutsch (C1), Englisch (fließend), Malayalam (Muttersprache), Hindi, Tamil</dd>
     </dl>
   </section>
 
   <section id="research">
-    <h2>Education &amp; research</h2>
+    <h2>Ausbildung &amp; Forschung</h2>
     <div class="cards">
       <div class="card">
         <div class="meta">2016 – 2019</div>
         <h3>M.Sc. Advanced Computation and Civil Engineering Structural Studies</h3>
-        <p>Technische Universität Dresden. Grade 1.6, master's thesis 1.0.</p>
+        <p>Technische Universität Dresden. Gesamtnote 1,6, Masterarbeit 1,0.</p>
       </div>
       <div class="card">
         <div class="meta">2019 · International Journal for Numerical Methods in Engineering</div>
@@ -300,27 +204,27 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; color: var
       </div>
       <div class="card">
         <div class="meta">2012 – 2016</div>
-        <h3>B.Tech. Civil Engineering</h3>
+        <h3>B.Tech. Bauingenieurwesen</h3>
         <p>St. Joseph's College of Engineering and Technology, Palai (Mahatma Gandhi University). First Class with Distinction.</p>
       </div>
       <div class="card">
-        <div class="meta">Courses</div>
-        <h3>Continuing education</h3>
-        <p>AWS Cloud Practitioner Essentials (AWS Skill Builder, 2022). Machine Learning (Stanford University on Coursera).</p>
+        <div class="meta">Kurse</div>
+        <h3>Weiterbildung</h3>
+        <p>AWS Cloud Practitioner Essentials (AWS Skill Builder, 2022). Machine Learning (Stanford University auf Coursera).</p>
       </div>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
+    <h2>Kontakt</h2>
     <div class="prose">
-      <p>The quickest way to reach me is a message on <a href="https://www.linkedin.com/in/aktomthomas/" target="_blank" rel="noopener">LinkedIn</a> or an email to <a href="mailto:aktomthomas@gmail.com">aktomthomas@gmail.com</a>.</p>
+      <p>Am schnellsten erreichen Sie mich über <a href="https://www.linkedin.com/in/aktomthomas/" target="_blank" rel="noopener">LinkedIn</a> oder per E-Mail an <a href="mailto:aktomthomas@gmail.com">aktomthomas@gmail.com</a>.</p>
     </div>
   </section>
 
   <footer>
     <span>© 2026 Tom Thomas</span>
-    <span>Langen (Hessen), Germany</span>
+    <span>Langen (Hessen) · <a href="en.html" hreflang="en">English version</a></span>
   </footer>
 </div>
 </body>
